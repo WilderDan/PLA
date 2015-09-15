@@ -101,7 +101,7 @@ int main() {
     sample = testData[j];
     
     classify[j] = 
-      (sample.x2 >= ((w[1]/-w[2])*sample.x1 + (w[0]/-w[2]))) ? 1 : -1;
+      (w[0] + w[1]*sample.x1 + w[2]*sample.x2 >= 0) ? 1 : -1;
 
     if (classify[j] != sample.d)
       ++misclassified;
